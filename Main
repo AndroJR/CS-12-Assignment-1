@@ -1,0 +1,25 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	/* What the program needs:
+	a loop(tbd);
+	a way to end the loop(where the input is "5")
+	cout "candidates and number of candidates"
+	candidates are represented by inputs of numbers;
+	if(input is valid) { increase tally of chosen vote
+						 increase tally of total votes	 
+						 cout "voted"
+						 return to the menu }
+	else(invalid input) { cout error }
+	cout "winner" after final tally
+	if (its a tie) cout "its a tie" then make the user input one last number for only the 
+		candidates that are tied for a final final result. cout error for any other input
+		
+	
+	
+	*/
+	return 0;
+}
