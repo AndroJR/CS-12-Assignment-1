@@ -4,11 +4,29 @@ using namespace std;
 
 int main()
 {
+	int ballot;
+	int cand1 = 0, cand2 = 0, cand3 = 0, cand4 = 0;
+	cout << "2020 EVOTE SYSTEM \n";
+	
+
+	do
+	{
+		cout << "Electronic Voting System \n" << "------------------------ \n"
+				"1) Hillary Clinton \n" << "2) Donald Trump \n" <<
+				"3) Michelle Obama \n" << "4) Ivanka Trump \n\n";
+		cout << "Cast your ballot for? 1 , 2 , 3 , or 4 ";
+		cin >> ballot;
+		
+		if(ballot == 1) { cout << "VOTED! \n";  cand1 += 1  }
+		if(ballot == 2)	{ cout << "VOTED! \n";  cand2 += 1  }
+		if(ballot == 3)	{ cout << "VOTED! \n";  cand3 += 1  }
+		if(ballot == 4)	{ cout << "VOTED! \n";  cand4 += 1  }
+	} while(ballot != 5) ;
 	/* What the program needs:
-	a loop(tbd);
-	a way to end the loop(where the input is "5")
-	cout "candidates and number of candidates"
-	candidates are represented by inputs of numbers;
+	a loop(tbd); check.
+	a way to end the loop(where the input is "5") check.
+	cout "candidates and number of candidates" check.
+	candidates are represented by inputs of numbers; check.
 	if(input is valid) { increase tally of chosen vote
 						 increase tally of total votes	 
 						 cout "voted"
