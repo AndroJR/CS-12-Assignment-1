@@ -6,38 +6,45 @@ int main()
 {
 	int ballot;
 	int cand1 = 0, cand2 = 0, cand3 = 0, cand4 = 0;
+	int total = 0;
+	int winner;
+	
 	cout << "2020 EVOTE SYSTEM \n";
 	
-
 	do
 	{
 		cout << "Electronic Voting System \n" << "------------------------ \n"
 				"1) Hillary Clinton \n" << "2) Donald Trump \n" <<
 				"3) Michelle Obama \n" << "4) Ivanka Trump \n\n";
+				
 		cout << "Cast your ballot for? 1 , 2 , 3 , or 4 ";
 		cin >> ballot;
 		
-		if(ballot == 1) { cout << "VOTED! \n";  cand1 += 1  }
-		if(ballot == 2)	{ cout << "VOTED! \n";  cand2 += 1  }
-		if(ballot == 3)	{ cout << "VOTED! \n";  cand3 += 1  }
-		if(ballot == 4)	{ cout << "VOTED! \n";  cand4 += 1  }
+		if(ballot == 1) { cout << "VOTED! \n";  cand1 += 1; total++;  }
+		if(ballot == 2)	{ cout << "VOTED! \n";  cand2 += 1; total++;  }
+		if(ballot == 3)	{ cout << "VOTED! \n";  cand3 += 1; total++;  }
+		if(ballot == 4)	{ cout << "VOTED! \n";  cand4 += 1; total++;  }
+		else if(ballot > 5)
+		{
+			cout << "Error! Invalid entry!" << endl;
+		}
 	} while(ballot != 5) ;
-	/* What the program needs:
-	a loop(tbd); check.
-	a way to end the loop(where the input is "5") check.
-	cout "candidates and number of candidates" check.
-	candidates are represented by inputs of numbers; check.
-	if(input is valid) { increase tally of chosen vote
-						 increase tally of total votes	 
-						 cout "voted"
-						 return to the menu }
-	else(invalid input) { cout error }
-	cout "winner" after final tally
-	if (its a tie) cout "its a tie" then make the user input one last number for only the 
-		candidates that are tied for a final final result. cout error for any other input
-		
 	
+	if(ballot == 5)
+		{
+			cout << "Final tally: " << total << endl;
+			cout << "Hillary Clinton's total votes: " << cand1 << endl;
+			cout << "Donald Trump's total votes: " << cand2 << endl;
+			cout << "Michelle Obama's total votes: " << cand3 << endl;
+			cout << "Ivanka Trump's total votes: " << cand4 << endl;
+		}
 	
-	*/
+	cout << "\n";
+	
+	if(cand1 > cand2 && cand1 > cand3 && cand1 > cand4) cout << "Hillary Clinton is the winner";
+	if(cand2 > cand1 && cand2 > cand3 && cand2 > cand4) cout << "Donald Trump is the winner";
+	if(cand3 > cand1 && cand3 > cand2 && cand3 > cand4) cout << "Michelle Obama is the winner";
+	if(cand4 > cand1 && cand4 > cand2 && cand4 > cand3) cout << "Ivanka Trump is the winner";	
+	
 	return 0;
 }
